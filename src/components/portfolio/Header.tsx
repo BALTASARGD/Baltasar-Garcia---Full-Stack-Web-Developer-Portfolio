@@ -12,7 +12,6 @@ const navLinks = [
   { href: '#about', label: 'Sobre mí' },
   { href: '#skills', label: 'Habilidades' },
   { href: '#projects', label: 'Proyectos' },
-  { href: '#skill-recommender', label: 'Recomendador' },
   { href: '#contact', label: 'Contacto' },
 ];
 
