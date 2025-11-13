@@ -47,7 +47,7 @@ export function ProjectsSection({ language }: { language: Language }) {
                               <Image
                                 alt={project.title}
                                 className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-105"
-                                layout="fill"
+                                fill
                                 src={projectImage.imageUrl}
                                 data-ai-hint={projectImage.imageHint}
                               />

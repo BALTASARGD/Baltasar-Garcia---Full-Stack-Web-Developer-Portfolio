@@ -58,7 +58,7 @@ export function HeroSection({ language }: { language: Language }) {
           </div>
            <AnimatedSection className="flex justify-center items-center">
             <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary shadow-lg">
-                {profileImage && <Image src={profileImage.imageUrl} alt="Baltasar Garcia" layout="fill" objectFit="cover" data-ai-hint={profileImage.imageHint} />}
+                {profileImage && <Image src={profileImage.imageUrl} alt="Baltasar Garcia" fill className="object-cover" data-ai-hint={profileImage.imageHint} />}
             </div>
            </AnimatedSection>
         </div>
