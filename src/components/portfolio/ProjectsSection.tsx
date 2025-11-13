@@ -47,7 +47,8 @@ export function ProjectsSection({ language }: { language: Language }) {
                               <Image
                                 alt={project.title}
                                 className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-105"
-                                fill
+                                width={600}
+                                height={400}
                                 src={projectImage.imageUrl}
                                 data-ai-hint={projectImage.imageHint}
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

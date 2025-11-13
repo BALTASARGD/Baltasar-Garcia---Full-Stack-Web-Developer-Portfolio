@@ -3,7 +3,7 @@
     {
       "id": "profile",
       "description": "Profile picture of Baltasar Garcia",
-      "imageUrl": "https://storage.googleapis.com/aai-studio-project-images/b575b6d7-8328-4223-96b6-39c5a770a0b6.png",
+      "imageUrl": "/img/WhatsApp Image 2025-11-13 at 21.14.10.jpeg",
       "imageHint": "professional headshot"
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": "project-portfolio",
       "description": "Screenshot of a portfolio website",
-      "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0Zm9saW8lMjB3ZWJzaXRlfGVufDB8fHx8MTc2MzU1OTMxNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/Captura desde 2025-11-13 22-35-30.png",
       "imageHint": "portfolio website"
     },
     {
@@ -39,7 +39,7 @@
     {
       "id": "project-my-control",
       "description": "Screenshot of MyControl finance app",
-      "imageUrl": "https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaW5hbmNlJTIwYXBwfGVufDB8fHx8MTc2MzU1OTM4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/Captura desde 2025-11-13 19-10-02.png",
       "imageHint": "finance app"
     }
   ]

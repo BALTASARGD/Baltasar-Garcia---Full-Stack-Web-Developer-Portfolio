@@ -158,7 +158,7 @@ export function ContactSection({ language }: { language: Language }) {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel>{t.form.email}</FormLabel>
                           <FormControl>
                             <Input placeholder={t.form.emailPlaceholder} {...field} />
                           </FormControl>

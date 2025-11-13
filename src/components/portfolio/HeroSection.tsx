@@ -13,12 +13,18 @@ export function HeroSection({ language }: { language: Language }) {
   return (
     <section id="home" className="w-full py-24 md:py-32 lg:py-40 xl:py-48">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+        <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-12 lg:gap-16">
+          <AnimatedSection className="flex justify-center items-center w-full lg:w-1/2">
+            <div className="relative w-full max-w-xs aspect-[3/4]">
+              {profileImage && <Image src={profileImage.imageUrl} alt="Baltasar Garcia" fill className="object-cover rounded-lg" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"/>}
+            </div>
+          </AnimatedSection>
           <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
              <AnimatedSection>
               <div className="space-y-4">
+                <p className="text-xl text-muted-foreground">{t.greeting}</p>
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  Baltasar García
+                  Balta García
                 </h1>
                 <p className="text-xl text-accent">
                   {t.title}
@@ -31,13 +37,13 @@ export function HeroSection({ language }: { language: Language }) {
             <AnimatedSection delay={100}>
               <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-start">
                 <Button asChild size="lg">
-                  <Link href="#contact">{t.contactMe}</Link>
+                  <a href="#contact">{t.contactMe}</a>
                 </Button>
                 <Button asChild variant="secondary" size="lg">
-                  <Link href="#projects">
+                  <a href="#projects">
                     {t.myProjects}
                     <ArrowDown className="ml-2 h-4 w-4" />
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </AnimatedSection>
@@ -56,11 +62,6 @@ export function HeroSection({ language }: { language: Language }) {
               </div>
              </AnimatedSection>
           </div>
-           <AnimatedSection className="flex justify-center items-center">
-            <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary shadow-lg">
-              {profileImage && <Image src={profileImage.imageUrl} alt="Baltasar Garcia" fill className="object-cover" sizes="(max-width: 1024px) 256px, 320px"/>}
-            </div>
-           </AnimatedSection>
         </div>
       </div>
     </section>
