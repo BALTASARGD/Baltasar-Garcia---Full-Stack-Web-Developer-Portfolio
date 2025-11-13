@@ -29,6 +29,12 @@
       "description": "Screenshot of Chore Champ Application",
       "imageUrl": "https://storage.googleapis.com/aai-studio-project-images/91629851-f761-4648-93d3-827376c205c4.png",
       "imageHint": "dashboard app"
+    },
+    {
+      "id": "project-my-control",
+      "description": "Screenshot of MyControl finance app",
+      "imageUrl": "https://storage.googleapis.com/aai-studio-project-images/2a2e4130-1c09-4091-893d-536551b9e072.png",
+      "imageHint": "finance app"
     }
   ]
 }

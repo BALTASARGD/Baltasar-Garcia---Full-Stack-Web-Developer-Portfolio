@@ -9,6 +9,14 @@ import { AnimatedSection } from './AnimatedSection';
 
 const projects = [
   {
+    title: 'MyControl',
+    description: 'Aplicación para la gestión de finanzas personales y familiares, con control de ingresos, gastos y presupuestos.',
+    tech: ['Next.js', 'Tailwind CSS', 'Firebase', 'TypeScript'],
+    github: 'https://github.com/BALTASARGD/MyControl',
+    demo: 'https://my-control-eta.vercel.app/',
+    imageId: 'project-my-control'
+  },
+  {
     title: 'Chore Champ App',
     description: 'Aplicación gamificada para gestionar tareas del hogar, con seguimiento de progreso, rachas y logros.',
     tech: ['Next.js', 'Tailwind CSS', 'Firebase', 'TypeScript'],
