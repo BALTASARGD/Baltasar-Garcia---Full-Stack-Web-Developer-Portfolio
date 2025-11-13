@@ -2,7 +2,7 @@ import { AnimatedSection } from './AnimatedSection';
 
 const experience = [
   {
-    role: "Praktikum: Desarrollador Web y Software Fullstack",
+    role: "Prácticas: Desarrollador Web y Software Fullstack",
     company: "It-Solutions Ghostnet Systems",
     period: "Nov 2025 - Presente",
     description: "Realizando prácticas profesionales en desarrollo Full Stack en Lübeck, Alemania.",
@@ -18,12 +18,6 @@ const experience = [
     company: "Nivel B2",
     period: "2024",
     description: "Estudios de alemán enfocados en el ámbito profesional para alcanzar el nivel B2.",
-  },
-  {
-    role: "Tutor de Desarrollo Web",
-    company: "Coderhouse",
-    period: "2022 - 2023",
-    description: "Guié a más de 200 estudiantes a través de los fundamentos del desarrollo web, resolviendo dudas y corrigiendo proyectos para asegurar su aprendizaje.",
   },
 ];
 
