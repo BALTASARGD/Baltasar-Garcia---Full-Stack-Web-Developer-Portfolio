@@ -146,6 +146,44 @@ export const translations = {
             }
         }
     },
+    skillRecommender: {
+      title: "AI Skill Recommender",
+      subtitle: "Analyze your skills and get personalized recommendations to boost your career.",
+      openButton: "Get Recommendations",
+      dialog: {
+        title: "Skill Recommendation Tool",
+        description: "Describe your current skills and career goals to get AI-powered recommendations.",
+      },
+      form: {
+        currentSkills: "Your Current Skills",
+        currentSkillsPlaceholder: "e.g., React, Node.js, SQL, project management...",
+        careerGoals: "Your Career Goals",
+        careerGoalsPlaceholder: "e.g., Become a senior full-stack developer, specialize in frontend...",
+        generating: "Generating...",
+        submit: "Get Recommendations",
+        validation: {
+          currentSkills: "Current skills must be at least 20 characters.",
+          careerGoals: "Career goals must be at least 20 characters.",
+        },
+      },
+      loading: {
+        title: "Analyzing your profile...",
+      },
+      results: {
+        recommendedSkills: "Recommended Skills",
+        learningPaths: "Personalized Learning Paths",
+      },
+      toast: {
+        success: {
+          title: "Recommendations Ready!",
+          description: "Your personalized skill recommendations have been generated.",
+        },
+        error: {
+          title: "Uh oh! Something went wrong.",
+          description: "Could not generate recommendations. Please try again.",
+        },
+      },
+    },
     footer: {
         copyright: '© 2024 Baltasar Garcia. All rights reserved.',
     }
@@ -294,6 +332,44 @@ export const translations = {
                 description: "Hubo un problema con tu solicitud."
             }
         }
+    },
+    skillRecommender: {
+      title: "Recomendador de Habilidades con IA",
+      subtitle: "Analiza tus habilidades y obtén recomendaciones personalizadas para impulsar tu carrera.",
+      openButton: "Obtener Recomendaciones",
+      dialog: {
+        title: "Herramienta de Recomendación de Habilidades",
+        description: "Describe tus habilidades actuales y objetivos profesionales para obtener recomendaciones con IA.",
+      },
+      form: {
+        currentSkills: "Tus Habilidades Actuales",
+        currentSkillsPlaceholder: "Ej: React, Node.js, SQL, gestión de proyectos...",
+        careerGoals: "Tus Metas Profesionales",
+        careerGoalsPlaceholder: "Ej: Convertirme en desarrollador full-stack senior, especializarme en frontend...",
+        generating: "Generando...",
+        submit: "Obtener Recomendaciones",
+        validation: {
+          currentSkills: "Las habilidades actuales deben tener al menos 20 caracteres.",
+          careerGoals: "Las metas profesionales deben tener al menos 20 caracteres.",
+        },
+      },
+      loading: {
+        title: "Analizando tu perfil...",
+      },
+      results: {
+        recommendedSkills: "Habilidades Recomendadas",
+        learningPaths: "Rutas de Aprendizaje Personalizadas",
+      },
+      toast: {
+        success: {
+          title: "¡Recomendaciones Listas!",
+          description: "Se han generado tus recomendaciones de habilidades personalizadas.",
+        },
+        error: {
+          title: "¡Uy! Algo salió mal.",
+          description: "No se pudieron generar las recomendaciones. Por favor, inténtalo de nuevo.",
+        },
+      },
     },
     footer: {
         copyright: '© 2024 Baltasar Garcia. Todos los derechos reservados.',
