@@ -2,10 +2,22 @@ import { AnimatedSection } from './AnimatedSection';
 
 const experience = [
   {
-    role: "Desarrollador Full Stack Freelance",
-    company: "Trabajo Autónomo",
-    period: "2021 - Presente",
-    description: "Desarrollo y mantenimiento de aplicaciones web para diversos clientes, utilizando tecnologías como React, Node.js y Next.js para ofrecer soluciones robustas y a medida.",
+    role: "Praktikum: Desarrollador Web y Software Fullstack",
+    company: "It-Solutions Ghostnet Systems",
+    period: "Nov 2025 - Presente",
+    description: "Realizando prácticas profesionales en desarrollo Full Stack en Lübeck, Alemania.",
+  },
+  {
+    role: "Desarrollador Web y Software",
+    company: "DCI Digital Career Institute",
+    period: "2023 - Oct 2025",
+    description: "Formación intensiva en desarrollo web y de software en Berlín, Alemania.",
+  },
+  {
+    role: "Curso de Alemán Profesional",
+    company: "Nivel B2",
+    period: "2024",
+    description: "Estudios de alemán enfocados en el ámbito profesional para alcanzar el nivel B2.",
   },
   {
     role: "Tutor de Desarrollo Web",
