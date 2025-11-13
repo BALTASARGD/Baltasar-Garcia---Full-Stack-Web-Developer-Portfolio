@@ -8,35 +8,78 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/s
 import { cn } from '@/lib/utils';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 
-const navLinks = [
-  { href: '#home', label: 'Inicio' },
-  { href: '#about', label: 'Sobre mí' },
-  { href: '#skills', label: 'Habilidades' },
-  { href: '#projects', label: 'Proyectos' },
-  { href: '#contact', label: 'Contacto' },
-];
+const navTranslations = {
+  es: [
+    { href: '#home', label: 'Inicio' },
+    { href: '#about', label: 'Sobre mí' },
+    { href: '#skills', label: 'Habilidades' },
+    { href: '#projects', label: 'Proyectos' },
+    { href: '#contact', label: 'Contacto' },
+  ],
+  en: [
+    { href: '#home', label: 'Home' },
+    { href: '#about', label: 'About Me' },
+    { href: '#skills', label: 'Skills' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
+  ],
+  de: [
+    { href: '#home', label: 'Startseite' },
+    { href: '#about', label: 'Über mich' },
+    { href: '#skills', label: 'Fähigkeiten' },
+    { href: '#projects', label: 'Projekte' },
+    { href: '#contact', label: 'Kontakt' },
+  ],
+};
 
-function LanguageSwitcher() {
+const languageTranslations = {
+  es: {
+    selectLanguage: "Seleccionar idioma",
+    spanish: "Español",
+    english: "English",
+    german: "Deutsch",
+    openMenu: "Abrir menú"
+  },
+  en: {
+    selectLanguage: "Select language",
+    spanish: "Español",
+    english: "English",
+    german: "Deutsch",
+    openMenu: "Open menu"
+  },
+  de: {
+    selectLanguage: "Sprache auswählen",
+    spanish: "Español",
+    english: "English",
+    german: "Deutsch",
+    openMenu: "Menü öffnen"
+  },
+}
+
+type Language = 'es' | 'en' | 'de';
+
+function LanguageSwitcher({ setLanguage, language }: { setLanguage: (lang: Language) => void; language: Language; }) {
+  const translations = languageTranslations[language];
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon">
           <Globe className="h-5 w-5" />
-          <span className="sr-only">Seleccionar idioma</span>
+          <span className="sr-only">{translations.selectLanguage}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setLanguage('es')}>
           <span className="mr-2">🇪🇸</span>
-          <span>Español</span>
+          <span>{translations.spanish}</span>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setLanguage('en')}>
           <span className="mr-2">🇬🇧</span>
-          <span>English</span>
+          <span>{translations.english}</span>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setLanguage('de')}>
           <span className="mr-2">🇩🇪</span>
-          <span>Deutsch</span>
+          <span>{translations.german}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -45,6 +88,7 @@ function LanguageSwitcher() {
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [language, setLanguage] = useState<Language>('es');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,6 +97,9 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
+  const navLinks = navTranslations[language];
+  const translations = languageTranslations[language];
 
   return (
     <header
@@ -79,7 +126,7 @@ export function Header() {
             ))}
           </nav>
           <div className="hidden md:block">
-            <LanguageSwitcher />
+            <LanguageSwitcher setLanguage={setLanguage} language={language} />
           </div>
         </div>
         <div className="md:hidden">
@@ -87,7 +134,7 @@ export function Header() {
             <SheetTrigger asChild>
               <Button variant="outline" size="icon">
                 <Menu className="h-6 w-6" />
-                <span className="sr-only">Abrir menú</span>
+                <span className="sr-only">{translations.openMenu}</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
@@ -107,7 +154,7 @@ export function Header() {
                   </SheetClose>
                 ))}
                 <div className="border-t pt-6">
-                  <LanguageSwitcher />
+                  <LanguageSwitcher setLanguage={setLanguage} language={language} />
                 </div>
               </div>
             </SheetContent>
