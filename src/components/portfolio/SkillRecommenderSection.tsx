@@ -73,12 +73,12 @@ export function SkillRecommenderSection() {
           </div>
         </AnimatedSection>
         
-        <div className="mx-auto max-w-4xl py-12">
+        <div className="mx-auto max-w-2xl py-12">
           <AnimatedSection delay={100}>
             <Card>
               <CardContent className="p-6">
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                     <FormField
                       control={form.control}
                       name="currentSkills"
@@ -90,7 +90,7 @@ export function SkillRecommenderSection() {
                               placeholder="Ej: React, Node.js, Express, MongoDB, REST APIs..."
                               className="resize-none"
                               {...field}
-                              rows={4}
+                              rows={3}
                             />
                           </FormControl>
                           <FormMessage />
@@ -108,7 +108,7 @@ export function SkillRecommenderSection() {
                               placeholder="Ej: Convertirme en un arquitecto de software, especializarme en DevOps, liderar un equipo de desarrollo..."
                               className="resize-none"
                               {...field}
-                              rows={4}
+                              rows={3}
                             />
                           </FormControl>
                           <FormMessage />
@@ -133,13 +133,13 @@ export function SkillRecommenderSection() {
 
           {loading && (
             <AnimatedSection delay={100}>
-              <Card className="mt-8">
+              <Card className="mt-6">
                 <CardHeader>
-                  <CardTitle className="animate-pulse">Analizando tu perfil...</CardTitle>
+                  <CardTitle className="animate-pulse text-base">Analizando tu perfil...</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="w-full h-8 rounded-md bg-muted animate-pulse"></div>
-                  <div className="w-full h-24 rounded-md bg-muted animate-pulse"></div>
+                  <div className="w-full h-6 rounded-md bg-muted animate-pulse"></div>
+                  <div className="w-full h-20 rounded-md bg-muted animate-pulse"></div>
                 </CardContent>
               </Card>
             </AnimatedSection>
@@ -147,10 +147,10 @@ export function SkillRecommenderSection() {
 
           {result && (
             <AnimatedSection delay={100}>
-              <div className="mt-8 space-y-6">
+              <div className="mt-6 space-y-4">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
+                    <CardTitle className="flex items-center gap-2 text-base">
                       <Lightbulb className="h-5 w-5 text-accent" />
                       Habilidades Recomendadas
                     </CardTitle>
@@ -165,7 +165,7 @@ export function SkillRecommenderSection() {
                 </Card>
                 <Card>
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
+                    <CardTitle className="flex items-center gap-2 text-base">
                       <BookOpen className="h-5 w-5 text-accent" />
                       Rutas de Aprendizaje
                     </CardTitle>
