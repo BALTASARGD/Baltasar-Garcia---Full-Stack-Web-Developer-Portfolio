@@ -27,19 +27,19 @@
     {
       "id": "project-portfolio",
       "description": "Screenshot of a portfolio website",
-      "imageUrl": "https://storage.googleapis.com/aai-studio-project-images/c19a16f2-39c8-472d-8e42-0d120a103c80.png",
+      "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0Zm9saW8lMjB3ZWJzaXRlfGVufDB8fHx8MTc2MzU1OTMxNHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "portfolio website"
     },
     {
       "id": "project-chore-champ",
       "description": "Screenshot of Chore Champ Application",
-      "imageUrl": "https://storage.googleapis.com/aai-studio-project-images/91629851-f761-4648-93d3-827376c205c4.png",
+      "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBhcHB8ZW58MHx8fHwxNzYzNTU5MzYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "dashboard app"
     },
     {
       "id": "project-my-control",
       "description": "Screenshot of MyControl finance app",
-      "imageUrl": "https://storage.googleapis.com/aai-studio-project-images/2a2e4130-1c09-4091-893d-536551b9e072.png",
+      "imageUrl": "https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaW5hbmNlJTIwYXBwfGVufDB8fHx8MTc2MzU1OTM4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "finance app"
     }
   ]

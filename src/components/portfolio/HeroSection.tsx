@@ -4,9 +4,11 @@ import { Github, Linkedin, ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from './AnimatedSection';
 import { translations, type Language } from '@/lib/translations';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function HeroSection({ language }: { language: Language }) {
   const t = translations[language].hero;
+  const profileImage = PlaceHolderImages.find((img) => img.id === 'profile');
 
   return (
     <section id="home" className="w-full py-24 md:py-32 lg:py-40 xl:py-48">
@@ -56,7 +58,7 @@ export function HeroSection({ language }: { language: Language }) {
           </div>
            <AnimatedSection className="flex justify-center items-center">
             <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary shadow-lg">
-                <Image src="/profile.jpg" alt="Baltasar Garcia" fill className="object-cover" sizes="(max-width: 1024px) 256px, 320px"/>
+              {profileImage && <Image src={profileImage.imageUrl} alt="Baltasar Garcia" fill className="object-cover" sizes="(max-width: 1024px) 256px, 320px"/>}
             </div>
            </AnimatedSection>
         </div>
