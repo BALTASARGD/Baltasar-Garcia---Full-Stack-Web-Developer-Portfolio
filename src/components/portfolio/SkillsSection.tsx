@@ -2,58 +2,49 @@ import { Code2, Database, GitMerge, Languages, Component, Server, PenTool } from
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedSection } from './AnimatedSection';
+import { translations, type Language } from '@/lib/translations';
 
-const skills = {
-  "Lenguajes & Bases de Datos": {
-    icon: <Database className="h-6 w-6 text-accent" />,
-    items: ["HTML", "CSS", "JavaScript", "TypeScript", "MongoDB", "Sass", "Bash", "Markdown"],
-  },
-  "Frameworks & Librerías": {
-    icon: <Component className="h-6 w-6 text-accent" />,
-    items: ["React", "Next.js", "Tailwind CSS", "Node.js", "Express.js", "Bootstrap", "Mongoose", "RestAPI"],
-  },
-  "Herramientas": {
-    icon: <GitMerge className="h-6 w-6 text-accent" />,
-    items: ["Git", "GitHub", "Vite", "Bun", "Linux", "Vscode", "Firebase", "Npm", "Postman", "Render"],
-  },
-  "Diseño UI/UX": {
-    icon: <PenTool className="h-6 w-6 text-accent" />,
-    items: ["UI/UX Design", "Figma", "Canva", "Responsive Design"],
-  },
-  "Idiomas": {
-    icon: <Languages className="h-6 w-6 text-accent" />,
-    items: ["Español (Nativo)", "Inglés (A2)", "Alemán (B2)", "Catalán (C1)"],
-  },
+const icons: { [key: string]: React.ReactNode } = {
+  "languages_db": <Database className="h-6 w-6 text-accent" />,
+  "frameworks": <Component className="h-6 w-6 text-accent" />,
+  "tools": <GitMerge className="h-6 w-6 text-accent" />,
+  "design": <PenTool className="h-6 w-6 text-accent" />,
+  "human_languages": <Languages className="h-6 w-6 text-accent" />,
 };
 
-export function SkillsSection() {
+export function SkillsSection({ language }: { language: Language }) {
+  const t = translations[language].skills;
+  const skillCategories = Object.keys(t.categories) as (keyof typeof t.categories)[];
+
   return (
     <section id="skills" className="w-full">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <AnimatedSection>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Habilidades</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t.title}</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Un vistazo a las tecnologías y herramientas con las que trabajo para construir aplicaciones web modernas.
+                {t.subtitle}
               </p>
             </div>
           </div>
         </AnimatedSection>
         
         <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-12">
-          {Object.entries(skills).map(([category, { icon, items }], index) => (
-            <AnimatedSection key={category} delay={index * 100}>
+          {skillCategories.map((categoryKey, index) => {
+            const category = t.categories[categoryKey];
+            return (
+            <AnimatedSection key={categoryKey} delay={index * 100}>
               <Card className="h-full">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
-                    {icon}
-                    {category}
+                    {icons[categoryKey]}
+                    {category.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {items.map((skill) => (
+                    {category.items.map((skill) => (
                       <Badge key={skill} variant="secondary" className="text-sm">
                         {skill}
                       </Badge>
@@ -62,7 +53,7 @@ export function SkillsSection() {
                 </CardContent>
               </Card>
             </AnimatedSection>
-          ))}
+          )})}
         </div>
       </div>
     </section>

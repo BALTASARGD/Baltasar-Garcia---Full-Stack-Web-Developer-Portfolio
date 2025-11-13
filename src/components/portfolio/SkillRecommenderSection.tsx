@@ -22,19 +22,21 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { translations, type Language } from '@/lib/translations';
 
-const formSchema = z.object({
-  currentSkills: z.string().min(20, "Por favor, detalla tus habilidades actuales con más de 20 caracteres."),
-  careerGoals: z.string().min(20, "Por favor, describe tus metas profesionales con más de 20 caracteres."),
-});
-
-type FormValues = z.infer<typeof formSchema>;
-
-export function SkillRecommenderSection() {
+export function SkillRecommenderSection({ language }: { language: Language }) {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<SkillRecommendationOutput | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const { toast } = useToast();
+  const t = translations[language].skillRecommender;
+
+  const formSchema = z.object({
+    currentSkills: z.string().min(20, t.form.validation.currentSkills),
+    careerGoals: z.string().min(20, t.form.validation.careerGoals),
+  });
+
+  type FormValues = z.infer<typeof formSchema>;
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -53,14 +55,14 @@ export function SkillRecommenderSection() {
     if (response.success && response.data) {
       setResult(response.data);
       toast({
-        title: "Recomendación generada",
-        description: "Tu plan de aprendizaje personalizado está listo.",
+        title: t.toast.success.title,
+        description: t.toast.success.description,
       });
     } else {
       toast({
         variant: "destructive",
-        title: "Error",
-        description: response.error || "No se pudieron generar las recomendaciones. Inténtalo de nuevo.",
+        title: t.toast.error.title,
+        description: response.error || t.toast.error.description,
       });
     }
   };
@@ -79,20 +81,20 @@ export function SkillRecommenderSection() {
           <div className="container mx-auto max-w-7xl px-4 md:px-6 flex flex-col items-center text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl flex items-center justify-center gap-3">
               <Wand2 className="h-8 w-8 text-accent" />
-              Recomendador de Habilidades
+              {t.title}
             </h2>
             <p className="max-w-[900px] mt-4 text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Utiliza esta herramienta de IA para obtener recomendaciones personalizadas sobre qué habilidades aprender para alcanzar tus metas profesionales.
+              {t.subtitle}
             </p>
             <Dialog open={isOpen} onOpenChange={handleOpenChange}>
               <DialogTrigger asChild>
-                <Button className="mt-8">Abrir Recomendador</Button>
+                <Button className="mt-8">{t.openButton}</Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[625px] max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle>Recomendador de Habilidades con IA</DialogTitle>
+                  <DialogTitle>{t.dialog.title}</DialogTitle>
                   <DialogDescription>
-                    Describe tus habilidades actuales y metas para recibir un plan de aprendizaje personalizado.
+                    {t.dialog.description}
                   </DialogDescription>
                 </DialogHeader>
                   <Form {...form}>
@@ -102,10 +104,10 @@ export function SkillRecommenderSection() {
                         name="currentSkills"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Habilidades Actuales</FormLabel>
+                            <FormLabel>{t.form.currentSkills}</FormLabel>
                             <FormControl>
                               <Textarea
-                                placeholder="Ej: React, Node.js, Express, MongoDB, REST APIs..."
+                                placeholder={t.form.currentSkillsPlaceholder}
                                 className="resize-none"
                                 {...field}
                                 rows={3}
@@ -120,10 +122,10 @@ export function SkillRecommenderSection() {
                         name="careerGoals"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Metas Profesionales</FormLabel>
+                            <FormLabel>{t.form.careerGoals}</FormLabel>
                             <FormControl>
                               <Textarea
-                                placeholder="Ej: Convertirme en un arquitecto de software, especializarme en DevOps, liderar un equipo de desarrollo..."
+                                placeholder={t.form.careerGoalsPlaceholder}
                                 className="resize-none"
                                 {...field}
                                 rows={3}
@@ -137,10 +139,10 @@ export function SkillRecommenderSection() {
                         {loading ? (
                           <>
                             <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
-                            Generando...
+                            {t.form.generating}
                           </>
                         ) : (
-                          "Obtener Recomendación"
+                          t.form.submit
                         )}
                       </Button>
                     </form>
@@ -149,7 +151,7 @@ export function SkillRecommenderSection() {
                 {loading && (
                     <Card className="mt-6">
                       <CardHeader>
-                        <CardTitle className="animate-pulse text-base">Analizando tu perfil...</CardTitle>
+                        <CardTitle className="animate-pulse text-base">{t.loading.title}</CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-4">
                         <div className="w-full h-6 rounded-md bg-muted animate-pulse"></div>
@@ -164,7 +166,7 @@ export function SkillRecommenderSection() {
                         <CardHeader>
                           <CardTitle className="flex items-center gap-2 text-base">
                             <Lightbulb className="h-5 w-5 text-accent" />
-                            Habilidades Recomendadas
+                            {t.results.recommendedSkills}
                           </CardTitle>
                         </CardHeader>
                         <CardContent>
@@ -179,7 +181,7 @@ export function SkillRecommenderSection() {
                         <CardHeader>
                           <CardTitle className="flex items-center gap-2 text-base">
                             <BookOpen className="h-5 w-5 text-accent" />
-                            Rutas de Aprendizaje
+                            {t.results.learningPaths}
                           </CardTitle>
                         </CardHeader>
                         <CardContent>

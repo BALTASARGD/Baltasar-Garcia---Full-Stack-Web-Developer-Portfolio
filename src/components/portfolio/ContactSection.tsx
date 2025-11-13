@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from 'next/link';
@@ -15,39 +14,20 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { sendContactMessage } from '@/app/contact-actions';
 import { useState } from 'react';
+import { translations, type Language } from '@/lib/translations';
 
-const contactDetails = [
-  {
-    icon: <Mail className="h-6 w-6 text-accent" />,
-    label: "Email",
-    value: "baltakoeln@icloud.com",
-    href: "mailto:baltakoeln@icloud.com"
-  },
-  {
-    icon: <Phone className="h-6 w-6 text-accent" />,
-    label: "Teléfono",
-    value: "+49 17657808931",
-    href: "tel:+4917657808931"
-  },
-  {
-    icon: <MapPin className="h-6 w-6 text-accent" />,
-    label: "Ubicación",
-    value: "Köln, Alemania",
-    href: "#"
-  }
-];
-
-const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
-  email: z.string().email({ message: "Por favor, introduce un email válido." }),
-  message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres." }),
-});
-
-type ContactFormValues = z.infer<typeof contactFormSchema>;
-
-export function ContactSection() {
+export function ContactSection({ language }: { language: Language }) {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
+  const t = translations[language].contact;
+
+  const contactFormSchema = z.object({
+    name: z.string().min(2, { message: t.form.validation.name }),
+    email: z.string().email({ message: t.form.validation.email }),
+    message: z.string().min(10, { message: t.form.validation.message }),
+  });
+  
+  type ContactFormValues = z.infer<typeof contactFormSchema>;
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -65,18 +45,39 @@ export function ContactSection() {
 
     if (result.success) {
       toast({
-        title: "Mensaje Enviado",
-        description: "Gracias por contactarme. Te responderé lo antes posible.",
+        title: t.toast.success.title,
+        description: t.toast.success.description,
       });
       form.reset();
     } else {
       toast({
         variant: "destructive",
-        title: "Error al enviar",
-        description: result.error || "No se pudo enviar el mensaje. Inténtalo de nuevo.",
+        title: t.toast.error.title,
+        description: result.error || t.toast.error.description,
       });
     }
   };
+  
+  const contactDetails = [
+    {
+      icon: <Mail className="h-6 w-6 text-accent" />,
+      label: t.details.email.label,
+      value: "baltakoeln@icloud.com",
+      href: "mailto:baltakoeln@icloud.com"
+    },
+    {
+      icon: <Phone className="h-6 w-6 text-accent" />,
+      label: t.details.phone.label,
+      value: "+49 17657808931",
+      href: "tel:+4917657808931"
+    },
+    {
+      icon: <MapPin className="h-6 w-6 text-accent" />,
+      label: t.details.location.label,
+      value: t.details.location.value,
+      href: "#"
+    }
+  ];
 
   return (
     <section id="contact" className="w-full bg-card">
@@ -84,9 +85,9 @@ export function ContactSection() {
         <AnimatedSection>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Contacto</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t.title}</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                ¿Tienes un proyecto en mente o quieres conectar? No dudes en contactarme.
+                {t.subtitle}
               </p>
             </div>
           </div>
@@ -134,7 +135,7 @@ export function ContactSection() {
           <AnimatedSection delay={200}>
             <Card>
               <CardHeader>
-                <CardTitle>Envíame un mensaje</CardTitle>
+                <CardTitle>{t.form.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <Form {...form}>
@@ -144,9 +145,9 @@ export function ContactSection() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Nombre</FormLabel>
+                          <FormLabel>{t.form.name}</FormLabel>
                           <FormControl>
-                            <Input placeholder="Tu nombre" {...field} />
+                            <Input placeholder={t.form.namePlaceholder} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -159,7 +160,7 @@ export function ContactSection() {
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="tu@email.com" {...field} />
+                            <Input placeholder={t.form.emailPlaceholder} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -170,9 +171,9 @@ export function ContactSection() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Mensaje</FormLabel>
+                          <FormLabel>{t.form.message}</FormLabel>
                           <FormControl>
-                            <Textarea placeholder="Escribe tu mensaje aquí..." className="resize-none" {...field} rows={5}/>
+                            <Textarea placeholder={t.form.messagePlaceholder} className="resize-none" {...field} rows={5}/>
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -184,7 +185,7 @@ export function ContactSection() {
                       ) : (
                         <Send className="mr-2 h-4 w-4" />
                       )}
-                      {loading ? "Enviando..." : "Enviar Mensaje"}
+                      {loading ? t.form.sending : t.form.submit}
                     </Button>
                   </form>
                 </Form>

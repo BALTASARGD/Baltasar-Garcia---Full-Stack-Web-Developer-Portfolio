@@ -7,88 +7,38 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-
-const navTranslations = {
-  es: [
-    { href: '#home', label: 'Inicio' },
-    { href: '#about', label: 'Sobre mí' },
-    { href: '#skills', label: 'Habilidades' },
-    { href: '#projects', label: 'Proyectos' },
-    { href: '#contact', label: 'Contacto' },
-  ],
-  en: [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About Me' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
-  ],
-  de: [
-    { href: '#home', label: 'Startseite' },
-    { href: '#about', label: 'Über mich' },
-    { href: '#skills', label: 'Fähigkeiten' },
-    { href: '#projects', label: 'Projekte' },
-    { href: '#contact', label: 'Kontakt' },
-  ],
-};
-
-const languageTranslations = {
-  es: {
-    selectLanguage: "Seleccionar idioma",
-    spanish: "Español",
-    english: "English",
-    german: "Deutsch",
-    openMenu: "Abrir menú"
-  },
-  en: {
-    selectLanguage: "Select language",
-    spanish: "Español",
-    english: "English",
-    german: "Deutsch",
-    openMenu: "Open menu"
-  },
-  de: {
-    selectLanguage: "Sprache auswählen",
-    spanish: "Español",
-    english: "English",
-    german: "Deutsch",
-    openMenu: "Menü öffnen"
-  },
-}
-
-type Language = 'es' | 'en' | 'de';
+import { translations, type Language } from '@/lib/translations';
 
 function LanguageSwitcher({ setLanguage, language }: { setLanguage: (lang: Language) => void; language: Language; }) {
-  const translations = languageTranslations[language];
+  const t = translations[language].header;
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon">
           <Globe className="h-5 w-5" />
-          <span className="sr-only">{translations.selectLanguage}</span>
+          <span className="sr-only">{t.selectLanguage}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setLanguage('es')}>
           <span className="mr-2">🇪🇸</span>
-          <span>{translations.spanish}</span>
+          <span>{t.spanish}</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setLanguage('en')}>
           <span className="mr-2">🇬🇧</span>
-          <span>{translations.english}</span>
+          <span>{t.english}</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setLanguage('de')}>
           <span className="mr-2">🇩🇪</span>
-          <span>{translations.german}</span>
+          <span>{t.german}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
 }
 
-export function Header() {
+export function Header({ language, setLanguage }: { language: Language, setLanguage: (lang: Language) => void }) {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [language, setLanguage] = useState<Language>('es');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -98,8 +48,7 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  const navLinks = navTranslations[language];
-  const translations = languageTranslations[language];
+  const t = translations[language].header;
 
   return (
     <header
@@ -115,7 +64,7 @@ export function Header() {
         </Link>
         <div className='flex items-center gap-2'>
           <nav className="hidden items-center gap-4 md:flex">
-            {navLinks.map((link) => (
+            {t.nav.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -134,7 +83,7 @@ export function Header() {
             <SheetTrigger asChild>
               <Button variant="outline" size="icon">
                 <Menu className="h-6 w-6" />
-                <span className="sr-only">{translations.openMenu}</span>
+                <span className="sr-only">{t.openMenu}</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
@@ -143,7 +92,7 @@ export function Header() {
                   <Code className="h-6 w-6 text-primary" />
                   <span className="font-bold">Baltasar García</span>
                 </Link>
-                {navLinks.map((link) => (
+                {t.nav.map((link) => (
                   <SheetClose key={link.href} asChild>
                     <Link
                       href={link.href}

@@ -5,9 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { AnimatedSection } from './AnimatedSection';
+import { translations, type Language } from '@/lib/translations';
 
-export function HeroSection() {
+export function HeroSection({ language }: { language: Language }) {
   const profileImage = PlaceHolderImages.find((img) => img.id === 'profile');
+  const t = translations[language].hero;
 
   return (
     <section id="home" className="w-full py-24 md:py-32 lg:py-40 xl:py-48">
@@ -20,21 +22,21 @@ export function HeroSection() {
                   Baltasar García
                 </h1>
                 <p className="text-xl text-accent">
-                  Full Stack Web Developer
+                  {t.title}
                 </p>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl lg:mx-0">
-                  ¡Hola! Soy Baltasar, un apasionado desarrollador Full Stack con base en Argentina. Me especializo en crear experiencias web fluidas, modernas y escalables.
+                  {t.description}
                 </p>
               </div>
              </AnimatedSection>
             <AnimatedSection delay={100}>
               <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-start">
                 <Button asChild size="lg">
-                  <Link href="#contact">Contáctame</Link>
+                  <Link href="#contact">{t.contactMe}</Link>
                 </Button>
                 <Button asChild variant="secondary" size="lg">
                   <Link href="#projects">
-                    Mis Proyectos
+                    {t.myProjects}
                     <ArrowDown className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

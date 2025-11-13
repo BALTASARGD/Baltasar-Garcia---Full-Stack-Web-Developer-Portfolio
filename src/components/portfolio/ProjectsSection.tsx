@@ -7,66 +7,21 @@ import { Card, CardDescription } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { AnimatedSection } from './AnimatedSection';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { translations, type Language } from '@/lib/translations';
 
-const projects = [
-  {
-    title: 'The Modern House',
-    description: 'Clone de la página web de "The Modern House", una inmobiliaria especializada en casas de diseño.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    github: 'https://github.com/BALTASARGD/The-Modern-House',
-    demo: 'https://baltasargd.github.io/The-Modern-House/',
-    imageId: 'project-modern-house'
-  },
-  {
-    title: 'MyControl',
-    description: 'Aplicación para la gestión de finanzas personales y familiares, con control de ingresos, gastos y presupuestos.',
-    tech: ['Next.js', 'Tailwind CSS', 'Firebase', 'TypeScript'],
-    github: 'https://github.com/BALTASARGD/MyControl',
-    demo: 'https://my-control-eta.vercel.app/',
-    imageId: 'project-my-control'
-  },
-  {
-    title: 'Chore Champ App',
-    description: 'Aplicación gamificada para gestionar tareas del hogar, con seguimiento de progreso, rachas y logros.',
-    tech: ['Next.js', 'Tailwind CSS', 'Firebase', 'TypeScript'],
-    github: 'https://github.com/BALTASARGD/chore-champ-app',
-    demo: 'https://chore-champ-app.vercel.app/',
-    imageId: 'project-chore-champ'
-  },
-  {
-    title: 'Plataforma E-commerce',
-    description: 'Tienda online completa con carrito de compras, gestión de productos y pasarela de pago integrada.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Express'],
-    github: 'https://github.com/BALTASARGD/ecommerce-platform',
-    imageId: 'project-ecommerce'
-  },
-  {
-    title: 'App de Gestión de Tareas',
-    description: 'Aplicación para organizar tareas diarias con sistema de autenticación de usuarios y seguimiento de progreso.',
-    tech: ['Next.js', 'Tailwind CSS', 'PostgreSQL', 'Prisma'],
-    github: 'https://github.com/BALTASARGD/task-manager-app',
-    imageId: 'project-task-manager'
-  },
-  {
-    title: 'Sitio Web Portafolio',
-    description: 'Mi portafolio personal para mostrar mis proyectos, habilidades y experiencia profesional (este mismo sitio).',
-    tech: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Genkit'],
-    github: 'https://github.com/BALTASARGD/BaltaDev',
-    demo: 'https://portfolio-seven-delta-66.vercel.app/',
-    imageId: 'project-portfolio'
-  },
-];
+export function ProjectsSection({ language }: { language: Language }) {
+  const t = translations[language].projects;
+  const projectData = t.projectList;
 
-export function ProjectsSection() {
   return (
     <section id="projects" className="w-full bg-card">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <AnimatedSection>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Proyectos Destacados</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t.title}</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Una selección de mis trabajos que demuestran mi capacidad para construir aplicaciones web funcionales y atractivas.
+                {t.subtitle}
               </p>
             </div>
           </div>
@@ -81,7 +36,7 @@ export function ProjectsSection() {
               className="w-full max-w-5xl mx-auto"
             >
               <CarouselContent>
-                {projects.map((project, index) => {
+                {projectData.map((project, index) => {
                   const projectImage = PlaceHolderImages.find((img) => img.id === project.imageId);
                   return (
                     <CarouselItem key={project.title} className="md:basis-1/2 lg:basis-1/3 p-4">
