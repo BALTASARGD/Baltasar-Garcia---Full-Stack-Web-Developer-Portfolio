@@ -2,10 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Github, Linkedin, ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { AnimatedSection } from './AnimatedSection';
 import { translations, type Language } from '@/lib/translations';
-import ProfileImage from '/public/profile.jpg';
 
 export function HeroSection({ language }: { language: Language }) {
   const t = translations[language].hero;
@@ -57,10 +55,9 @@ export function HeroSection({ language }: { language: Language }) {
              </AnimatedSection>
           </div>
            <AnimatedSection className="flex justify-center items-center">
-            <Avatar className="w-64 h-64 lg:w-80 lg:h-80 border-4 border-primary shadow-lg">
-                <Image src={ProfileImage} alt="Baltasar Garcia" className="object-cover w-full h-full" />
-                <AvatarFallback>BG</AvatarFallback>
-            </Avatar>
+            <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary shadow-lg">
+                <Image src="/profile.jpg" alt="Baltasar Garcia" layout="fill" objectFit="cover" />
+            </div>
            </AnimatedSection>
         </div>
       </div>
