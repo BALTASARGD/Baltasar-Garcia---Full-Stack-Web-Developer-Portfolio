@@ -22,7 +22,7 @@ const skills = {
   },
   "Idiomas": {
     icon: <Languages className="h-6 w-6 text-accent" />,
-    items: ["Español (Nativo)", "Inglés (Avanzado C1)"],
+    items: ["Español (Nativo)", "Inglés (A2)", "Alemán (B2)", "Catalán (C1)"],
   },
 };
 
