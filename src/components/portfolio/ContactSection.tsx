@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from './AnimatedSection';
 
@@ -7,19 +7,13 @@ const contactDetails = [
   {
     icon: <Mail className="h-6 w-6 text-accent" />,
     label: "Email",
-    value: "baltasar.garcia.dev@email.com",
-    href: "mailto:baltasar.garcia.dev@email.com"
-  },
-  {
-    icon: <Phone className="h-6 w-6 text-accent" />,
-    label: "Teléfono",
-    value: "+54 9 11 1234-5678",
-    href: "tel:+5491112345678"
+    value: "baltakoeln@icloud.com",
+    href: "mailto:baltakoeln@icloud.com"
   },
   {
     icon: <MapPin className="h-6 w-6 text-accent" />,
     label: "Ubicación",
-    value: "Buenos Aires, Argentina",
+    value: "Köln, Alemania",
     href: "#"
   }
 ];
@@ -41,7 +35,7 @@ export function ContactSection() {
         
         <div className="mx-auto max-w-4xl py-12">
             <AnimatedSection delay={100}>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {contactDetails.map((detail) => (
                   <div key={detail.label} className="flex flex-col items-center text-center">
                     {detail.icon}
@@ -56,12 +50,12 @@ export function ContactSection() {
             <AnimatedSection delay={200}>
                 <div className="flex justify-center space-x-4 mt-12">
                     <Button variant="ghost" size="icon" asChild>
-                      <Link href="https://github.com/baltasar-garcia" target="_blank" aria-label="GitHub">
+                      <Link href="https://github.com/BALTASARGD" target="_blank" aria-label="GitHub">
                         <Github className="h-8 w-8 text-muted-foreground hover:text-primary" />
                       </Link>
                     </Button>
                     <Button variant="ghost" size="icon" asChild>
-                      <Link href="https://linkedin.com/in/baltasar-garcia" target="_blank" aria-label="LinkedIn">
+                      <Link href="https://www.linkedin.com/in/balta-garcia-68a50434a/" target="_blank" aria-label="LinkedIn">
                         <Linkedin className="h-8 w-8 text-muted-foreground hover:text-primary" />
                       </Link>
                     </Button>

@@ -36,14 +36,14 @@ const projects = [
     title: 'Plataforma E-commerce',
     description: 'Tienda online completa con carrito de compras, gestión de productos y pasarela de pago integrada.',
     tech: ['React', 'Node.js', 'MongoDB', 'Express'],
-    github: 'https://github.com/baltasar-garcia/ecommerce-platform',
+    github: 'https://github.com/BALTASARGD/ecommerce-platform',
     imageId: 'project-ecommerce'
   },
   {
     title: 'App de Gestión de Tareas',
     description: 'Aplicación para organizar tareas diarias con sistema de autenticación de usuarios y seguimiento de progreso.',
     tech: ['Next.js', 'Tailwind CSS', 'PostgreSQL', 'Prisma'],
-    github: 'https://github.com/baltasar-garcia/task-manager-app',
+    github: 'https://github.com/BALTASARGD/task-manager-app',
     imageId: 'project-task-manager'
   },
   {

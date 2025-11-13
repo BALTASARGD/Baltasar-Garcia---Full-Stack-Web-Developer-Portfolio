@@ -43,12 +43,12 @@ export function HeroSection() {
              <AnimatedSection delay={200}>
               <div className="flex justify-center lg:justify-start space-x-4 mt-4">
                   <Button variant="ghost" size="icon" asChild>
-                    <Link href="https://github.com/baltasar-garcia" target="_blank" aria-label="GitHub">
+                    <Link href="https://github.com/BALTASARGD" target="_blank" aria-label="GitHub">
                       <Github className="h-6 w-6 text-muted-foreground hover:text-primary" />
                     </Link>
                   </Button>
                   <Button variant="ghost" size="icon" asChild>
-                    <Link href="https://linkedin.com/in/baltasar-garcia" target="_blank" aria-label="LinkedIn">
+                    <Link href="https://www.linkedin.com/in/balta-garcia-68a50434a/" target="_blank" aria-label="LinkedIn">
                       <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary" />
                     </Link>
                   </Button>
