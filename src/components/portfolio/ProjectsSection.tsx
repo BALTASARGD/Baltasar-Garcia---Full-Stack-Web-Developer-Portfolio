@@ -50,6 +50,7 @@ export function ProjectsSection({ language }: { language: Language }) {
                                 fill
                                 src={projectImage.imageUrl}
                                 data-ai-hint={projectImage.imageHint}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                               />
                             )}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
