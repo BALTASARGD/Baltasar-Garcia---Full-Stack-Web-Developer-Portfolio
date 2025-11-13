@@ -10,6 +10,7 @@ import { translations, type Language } from '@/lib/translations';
 export function HeroSection({ language }: { language: Language }) {
   const profileImage = PlaceHolderImages.find((img) => img.id === 'profile');
   const t = translations[language].hero;
+  const newProfileImageUrl = "https://storage.googleapis.com/aai-studio-project-images/c19a16f2-39c8-472d-8e42-0d120a103c80.png";
 
   return (
     <section id="home" className="w-full py-24 md:py-32 lg:py-40 xl:py-48">
@@ -59,7 +60,7 @@ export function HeroSection({ language }: { language: Language }) {
           </div>
            <AnimatedSection className="flex justify-center items-center">
             <Avatar className="w-64 h-64 lg:w-80 lg:h-80 border-4 border-primary shadow-lg">
-                {profileImage && <AvatarImage src={profileImage.imageUrl} alt={profileImage.description} data-ai-hint={profileImage.imageHint} />}
+                <AvatarImage src={newProfileImageUrl} alt={profileImage?.description} data-ai-hint={profileImage?.imageHint} />
                 <AvatarFallback>BG</AvatarFallback>
             </Avatar>
            </AnimatedSection>
