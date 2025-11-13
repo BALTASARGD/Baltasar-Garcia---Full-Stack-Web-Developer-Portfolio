@@ -7,6 +7,12 @@
       "imageHint": "professional headshot"
     },
     {
+      "id": "project-modern-house",
+      "description": "Screenshot of The Modern House website clone",
+      "imageUrl": "https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBob3VzZXxlbnwwfHx8fDE3NjI5NDc1MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern house"
+    },
+    {
       "id": "project-ecommerce",
       "description": "Screenshot of an e-commerce platform",
       "imageUrl": "https://images.unsplash.com/photo-1657812159075-7f0abd98f7b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlY29tbWVyY2UlMjB3ZWJzaXRlfGVufDB8fHx8MTc2MjE1MjcwOXww&ixlib=rb-4.1.0&q=80&w=1080",

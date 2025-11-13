@@ -9,6 +9,14 @@ import { AnimatedSection } from './AnimatedSection';
 
 const projects = [
   {
+    title: 'The Modern House',
+    description: 'Clone de la página web de "The Modern House", una inmobiliaria especializada en casas de diseño.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    github: 'https://github.com/BALTASARGD/The-Modern-House',
+    demo: 'https://baltasargd.github.io/The-Modern-House/',
+    imageId: 'project-modern-house'
+  },
+  {
     title: 'MyControl',
     description: 'Aplicación para la gestión de finanzas personales y familiares, con control de ingresos, gastos y presupuestos.',
     tech: ['Next.js', 'Tailwind CSS', 'Firebase', 'TypeScript'],
