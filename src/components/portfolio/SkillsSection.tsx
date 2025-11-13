@@ -1,4 +1,4 @@
-import { Code2, Database, GitMerge, Languages, Component, Server } from 'lucide-react';
+import { Code2, Database, GitMerge, Languages, Component, Server, PenTool } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedSection } from './AnimatedSection';
@@ -6,15 +6,19 @@ import { AnimatedSection } from './AnimatedSection';
 const skills = {
   "Lenguajes & Bases de Datos": {
     icon: <Database className="h-6 w-6 text-accent" />,
-    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Python", "SQL", "MongoDB", "PostgreSQL"],
+    items: ["HTML", "CSS", "JavaScript", "TypeScript", "MongoDB", "Sass", "Bash", "Markdown"],
   },
   "Frameworks & Librerías": {
     icon: <Component className="h-6 w-6 text-accent" />,
-    items: ["React", "Next.js", "Tailwind CSS", "Node.js", "Express", "Django"],
+    items: ["React", "Next.js", "Tailwind CSS", "Node.js", "Express.js", "Bootstrap", "Mongoose", "RestAPI"],
   },
   "Herramientas": {
     icon: <GitMerge className="h-6 w-6 text-accent" />,
-    items: ["Git", "GitHub", "Docker"],
+    items: ["Git", "GitHub", "Vite", "Bun", "Linux", "Vscode", "Firebase", "Npm", "Postman", "Render"],
+  },
+  "Diseño UI/UX": {
+    icon: <PenTool className="h-6 w-6 text-accent" />,
+    items: ["UI/UX Design", "Figma", "Canva", "Responsive Design"],
   },
   "Idiomas": {
     icon: <Languages className="h-6 w-6 text-accent" />,
@@ -37,7 +41,7 @@ export function SkillsSection() {
           </div>
         </AnimatedSection>
         
-        <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
+        <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-12">
           {Object.entries(skills).map(([category, { icon, items }], index) => (
             <AnimatedSection key={category} delay={index * 100}>
               <Card className="h-full">
