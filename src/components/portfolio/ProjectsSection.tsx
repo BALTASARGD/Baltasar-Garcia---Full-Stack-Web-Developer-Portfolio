@@ -76,42 +76,52 @@ export function ProjectsSection() {
             const projectImage = PlaceHolderImages.find((img) => img.id === project.imageId);
             return (
             <AnimatedSection key={project.title} delay={index * 100}>
-              <Card className="flex flex-col h-full overflow-hidden transition-transform transform hover:-translate-y-2">
-                {projectImage && (
-                  <Image
-                    alt={project.title}
-                    className="aspect-video w-full object-cover"
-                    height={340}
-                    src={projectImage.imageUrl}
-                    width={600}
-                    data-ai-hint={projectImage.imageHint}
-                  />
-                )}
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <Badge key={tech} variant="outline">{tech}</Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex gap-2">
-                  <Button asChild variant="ghost" className="w-full">
-                    <Link href={project.github} target="_blank">
-                      <Github className="mr-2 h-4 w-4" /> Ver en GitHub
-                    </Link>
-                  </Button>
-                  {project.demo && (
-                    <Button asChild variant="secondary" className="w-full">
-                      <Link href={project.demo} target="_blank">
-                        Ver Demo <ArrowUpRight className="ml-auto h-4 w-4" />
-                      </Link>
-                    </Button>
-                  )}
-                </CardFooter>
+              <Card className="group relative flex flex-col h-full overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-2xl">
+                <div className="relative w-full aspect-video overflow-hidden">
+                    {projectImage && (
+                    <Image
+                        alt={project.title}
+                        className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+                        layout="fill"
+                        src={projectImage.imageUrl}
+                        data-ai-hint={projectImage.imageHint}
+                    />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                </div>
+                <div className="p-6 flex flex-col justify-between flex-grow">
+                    <div>
+                        <div className="flex items-start justify-between">
+                            <CardTitle className="text-xl font-bold mb-2">{project.title}</CardTitle>
+                             <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <Button asChild variant="ghost" size="icon" className="h-8 w-8">
+                                    <Link href={project.github} target="_blank">
+                                    <Github className="h-5 w-5" />
+                                    </Link>
+                                </Button>
+                                {project.demo && (
+                                    <Button asChild variant="ghost" size="icon" className="h-8 w-8">
+                                    <Link href={project.demo} target="_blank">
+                                        <ArrowUpRight className="h-5 w-5" />
+                                    </Link>
+                                    </Button>
+                                )}
+                            </div>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {project.tech.map((tech) => (
+                            <Badge key={tech} variant="secondary">{tech}</Badge>
+                            ))}
+                        </div>
+                        
+                        <div className="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+                            <CardDescription className="text-muted-foreground/80 mt-2">
+                                {project.description}
+                            </CardDescription>
+                        </div>
+                    </div>
+                </div>
               </Card>
             </AnimatedSection>
           )})}
