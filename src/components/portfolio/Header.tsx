@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/s
 import { cn } from '@/lib/utils';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { translations, type Language } from '@/lib/translations';
+import { ThemeToggle } from './ThemeToggle';
 
 function LanguageSwitcher({ setLanguage, language }: { setLanguage: (lang: Language) => void; language: Language; }) {
   const t = translations[language].header;
@@ -74,8 +75,9 @@ export function Header({ language, setLanguage }: { language: Language, setLangu
               </Link>
             ))}
           </nav>
-          <div className="hidden md:block">
+          <div className="hidden items-center gap-2 md:flex">
             <LanguageSwitcher setLanguage={setLanguage} language={language} />
+            <ThemeToggle />
           </div>
         </div>
         <div className="md:hidden">
@@ -102,8 +104,9 @@ export function Header({ language, setLanguage }: { language: Language, setLangu
                     </Link>
                   </SheetClose>
                 ))}
-                <div className="border-t pt-6">
+                <div className="border-t pt-6 flex items-center justify-between">
                   <LanguageSwitcher setLanguage={setLanguage} language={language} />
+                  <ThemeToggle />
                 </div>
               </div>
             </SheetContent>
