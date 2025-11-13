@@ -50,7 +50,8 @@ const projects = [
     title: 'Sitio Web Portafolio',
     description: 'Mi portafolio personal para mostrar mis proyectos, habilidades y experiencia profesional (este mismo sitio).',
     tech: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Genkit'],
-    github: 'https://github.com/baltasar-garcia/portfolio',
+    github: 'https://github.com/BALTASARGD/BaltaDev',
+    demo: 'https://portfolio-seven-delta-66.vercel.app/',
     imageId: 'project-portfolio'
   },
 ];
