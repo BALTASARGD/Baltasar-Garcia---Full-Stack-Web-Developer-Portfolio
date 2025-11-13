@@ -78,49 +78,47 @@ export function ProjectsSection() {
             <AnimatedSection key={project.title} delay={index * 100}>
               <Card className="group relative flex flex-col h-full overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-2xl">
                 <div className="relative w-full aspect-video overflow-hidden">
-                    {projectImage && (
+                  {projectImage && (
                     <Image
-                        alt={project.title}
-                        className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-                        layout="fill"
-                        src={projectImage.imageUrl}
-                        data-ai-hint={projectImage.imageHint}
+                      alt={project.title}
+                      className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-105"
+                      layout="fill"
+                      src={projectImage.imageUrl}
+                      data-ai-hint={projectImage.imageHint}
                     />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-4 transition-all duration-500 group-hover:bottom-16">
+                    <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out bg-black/50 backdrop-blur-sm">
+                    <div className="flex gap-2">
+                      {project.github && (
+                        <Button asChild variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/20 hover:text-white">
+                          <Link href={project.github} target="_blank" aria-label="GitHub">
+                            <Github className="h-5 w-5" />
+                          </Link>
+                        </Button>
+                      )}
+                      {project.demo && (
+                        <Button asChild variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/20 hover:text-white">
+                          <Link href={project.demo} target="_blank" aria-label="Live Demo">
+                            <ArrowUpRight className="h-5 w-5" />
+                          </Link>
+                        </Button>
+                      )}
+                    </div>
+                  </div>
                 </div>
                 <div className="p-6 flex flex-col justify-between flex-grow">
-                    <div>
-                        <div className="flex items-start justify-between">
-                            <CardTitle className="text-xl font-bold mb-2">{project.title}</CardTitle>
-                             <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <Button asChild variant="ghost" size="icon" className="h-8 w-8">
-                                    <Link href={project.github} target="_blank">
-                                    <Github className="h-5 w-5" />
-                                    </Link>
-                                </Button>
-                                {project.demo && (
-                                    <Button asChild variant="ghost" size="icon" className="h-8 w-8">
-                                    <Link href={project.demo} target="_blank">
-                                        <ArrowUpRight className="h-5 w-5" />
-                                    </Link>
-                                    </Button>
-                                )}
-                            </div>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2 mb-4">
-                            {project.tech.map((tech) => (
-                            <Badge key={tech} variant="secondary">{tech}</Badge>
-                            ))}
-                        </div>
-                        
-                        <div className="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">
-                            <CardDescription className="text-muted-foreground/80 mt-2">
-                                {project.description}
-                            </CardDescription>
-                        </div>
-                    </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech) => (
+                      <Badge key={tech} variant="secondary">{tech}</Badge>
+                    ))}
+                  </div>
+                  <CardDescription className="text-muted-foreground/90">
+                    {project.description}
+                  </CardDescription>
                 </div>
               </Card>
             </AnimatedSection>
