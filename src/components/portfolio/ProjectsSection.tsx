@@ -9,6 +9,14 @@ import { AnimatedSection } from './AnimatedSection';
 
 const projects = [
   {
+    title: 'Chore Champ App',
+    description: 'Aplicación gamificada para gestionar tareas del hogar, con seguimiento de progreso, rachas y logros.',
+    tech: ['Next.js', 'Tailwind CSS', 'Firebase', 'TypeScript'],
+    github: 'https://github.com/BALTASARGD/chore-champ-app',
+    demo: 'https://chore-champ-app.vercel.app/',
+    imageId: 'project-chore-champ'
+  },
+  {
     title: 'Plataforma E-commerce',
     description: 'Tienda online completa con carrito de compras, gestión de productos y pasarela de pago integrada.',
     tech: ['React', 'Node.js', 'MongoDB', 'Express'],
@@ -73,12 +81,19 @@ export function ProjectsSection() {
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="flex gap-2">
                   <Button asChild variant="ghost" className="w-full">
                     <Link href={project.github} target="_blank">
-                      <Github className="mr-2 h-4 w-4" /> Ver en GitHub <ArrowUpRight className="ml-auto h-4 w-4" />
+                      <Github className="mr-2 h-4 w-4" /> Ver en GitHub
                     </Link>
                   </Button>
+                  {project.demo && (
+                    <Button asChild variant="secondary" className="w-full">
+                      <Link href={project.demo} target="_blank">
+                        Ver Demo <ArrowUpRight className="ml-auto h-4 w-4" />
+                      </Link>
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             </AnimatedSection>
