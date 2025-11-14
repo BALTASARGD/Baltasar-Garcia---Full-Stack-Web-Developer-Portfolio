@@ -9,8 +9,8 @@ export const translations = {
       { href: '#contact', label: 'Contact' },
     ],
     hero: {
-      greeting: "Hello world, I'm Balta Garcia",
-      title: 'Junior Web Developer based in Germany.',
+      greeting: "",
+      title: 'Full Stack Web Developer based in Germany.',
       description: "I'm passionate about creating dynamic, responsive, and user-friendly websites. My journey into web development started with a curiosity about how websites work, and it has evolved into a passion for coding and design.",
       contactMe: 'Contact Me',
       myProjects: 'My Projects',
@@ -20,16 +20,22 @@ export const translations = {
       subtitle: 'My Story & Skills',
       experience: [
         {
-          period: "2022 - Present",
-          role: "Self-Taught Web Developer",
-          company: "Personal Projects",
-          description: "My interest in web development began when I decided to build a website for my personal training business. This sparked a deep curiosity that led me to dive into the world of programming, starting with the basics of HTML, CSS, and JavaScript, and then moving on to modern frameworks like React and Next.js.",
+          period: "Nov 2025 - Present",
+          role: "Internship as a full-stack web and software developer",
+          company: "It-Solutions Ghostnet Systems. Lübeck Germany",
+          description: "I am currently doing an internship as a full-stack web and software developer at It-Solutions Ghostnet Systems.",
         },
         {
-          period: "Today",
-          role: "Aspiring Junior Developer",
-          company: "Open to Opportunities",
-          description: "I thrive on challenges and enjoy solving complex problems. I am a lifelong learner, constantly seeking to expand my knowledge and skills. My goal is to use my passion for technology to create meaningful and impactful solutions.",
+          period: "Jun 2024 - Oct 2025",
+          role: "Web and software developer studies",
+          company: "Dci Digital Carrer institute in Berlin",
+          description: "I studied web and software development at the Dci Digital Carrer institute in Berlin and finished in October 2025.",
+        },
+        {
+          period: "2024",
+          role: "German Level B2",
+          company: "Aimed at the professions",
+          description: "I studied German to a B2 level, focusing on professional language skills.",
         },
       ],
     },
@@ -39,23 +45,23 @@ export const translations = {
         categories: {
             languages_db: {
                 title: "Languages & Databases",
-                items: ["HTML", "CSS", "JavaScript", "TypeScript", "Python", "SQL"]
+                items: ["HTML", "CSS", "JavaScript", "TypeScript", "Bash"]
             },
             frameworks: {
                 title: "Frameworks & Libraries",
-                items: ["React", "Next.js", "Node.js", "Express", "Tailwind CSS", "shadcn/ui"]
+                items: ["React", "Next.js", "Bootstrap", "Sass", "Responsive design", "Node.js", "Express.js", "RestAPI", "Mongoose", "Vite", "Bun", "Tailwind CSS"]
             },
             tools: {
                 title: "Tools & Platforms",
-                items: ["Git", "GitHub", "Docker", "Firebase", "Vercel", "Genkit"]
+                items: ["Git", "GitHub", "Linux", "Vscode", "Firebase", "Npm", "Postman", "Render", "Markdown", "Vercel"]
             },
             design: {
                 title: "Design",
-                items: ["Figma", "Canva"]
+                items: ["UI/Ux Design", "Figma", "Canva"]
             },
             human_languages: {
                 title: "Human Languages",
-                items: ["Spanish (Native)", "English (C1)", "German (B1)"]
+                items: ["Spanish (Native Speaker)", "German (B2)", "English (A2)"]
             }
         }
     },
@@ -104,7 +110,7 @@ export const translations = {
           {
             title: 'Portfolio Website',
             description: 'My personal portfolio to showcase my projects, skills, and professional experience (this very site).',
-            tech: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Genkit'],
+            tech: ['Next.js', 'Tailwind CSS', 'TypeScript'],
             github: 'https://github.com/BALTASARGD/BaltaDev',
             demo: 'https://portfolio-seven-delta-66.vercel.app/',
             imageId: 'project-portfolio'
@@ -196,8 +202,8 @@ export const translations = {
       { href: '#contact', label: 'Contacto' },
     ],
     hero: {
-      greeting: 'Hola mundo, soy Balta García',
-      title: 'Desarrollador web junior residente en Alemania.',
+      greeting: '',
+      title: 'Desarrollador Web FullStack residente en alemania',
       description: 'Me interesa mucho crear sitios web dinámicos, adaptables y fáciles de usar. Mi incursión en el desarrollo web comenzó con la curiosidad por saber cómo funcionan los sitios web, y evolucionó hasta convertirse en una pasión por la programación y el diseño.',
       contactMe: 'Contáctame',
       myProjects: 'Mis Proyectos',
@@ -207,16 +213,22 @@ export const translations = {
       subtitle: 'Mi Historia y Habilidades',
       experience: [
         {
-          period: "2022 - Presente",
-          role: "Desarrollador Web Autodidacta",
-          company: "Proyectos Personales",
-          description: "Mi interés en el desarrollo web comenzó cuando decidí construir un sitio web para mi negocio de entrenamiento personal. Esto despertó una profunda curiosidad que me llevó a sumergirme en el mundo de la programación, comenzando con los fundamentos de HTML, CSS y JavaScript, y luego pasando a frameworks modernos como React y Next.js.",
+          period: "Nov 2025 - Presente",
+          role: "Practicas de desarrollador web y software fullstack",
+          company: "It-Solutions Ghostnet Systems. Lübeck Deutschland",
+          description: "Realizo actualmente practicas de desarrollador web y software fullstack en la empresa It-Solutions Ghostnet Systems.",
         },
         {
-          period: "Hoy",
-          role: "Aspirante a Desarrollador Junior",
-          company: "Abierto a Oportunidades",
-          description: "Me gustan los desafíos y disfruto resolviendo problemas complejos. Soy un aprendiz de por vida, buscando constantemente expandir mis conocimientos y habilidades. Mi objetivo es utilizar mi pasión por la tecnología para crear soluciones significativas e impactantes.",
+          period: "Jun 2024 - Oct 2025",
+          role: "Estudios de desarrollador web y del software",
+          company: "Dci Digital Carrer institute en Berlin",
+          description: "Realice estudios de desarrollador web y del softeare en Dci Digital Carrer institute en Berlin y acabe en octubre de 2025.",
+        },
+        {
+          period: "2024",
+          role: "Nivel B2 de Alemán",
+          company: "Dirigido a las profesiones",
+          description: "Estudié alemán hasta el nivel B2, enfocado en el ámbito profesional.",
         },
       ],
     },
@@ -226,23 +238,23 @@ export const translations = {
         categories: {
             languages_db: {
                 title: "Lenguajes y Bases de Datos",
-                items: ["HTML", "CSS", "JavaScript", "TypeScript", "Python", "SQL"]
+                items: ["HTML", "CSS", "JavaScript", "TypeScript", "Bash"]
             },
             frameworks: {
                 title: "Frameworks y Librerías",
-                items: ["React", "Next.js", "Node.js", "Express", "Tailwind CSS", "shadcn/ui"]
+                items: ["React", "Next.js", "Bootstrap", "Sass", "Responsive design", "Node.js", "Express.js", "RestAPI", "Mongoose", "Vite", "Bun", "Tailwind CSS"]
             },
             tools: {
                 title: "Herramientas y Plataformas",
-                items: ["Git", "GitHub", "Docker", "Firebase", "Vercel", "Genkit"]
+                items: ["Git", "GitHub", "Linux", "Vscode", "Firebase", "Npm", "Postman", "Render", "Markdown", "Vercel"]
             },
             design: {
                 title: "Diseño",
-                items: ["Figma", "Canva"]
+                items: ["UI/Ux Design", "Figma", "Canva"]
             },
             human_languages: {
                 title: "Idiomas",
-                items: ["Español (Nativo)", "Inglés (C1)", "Alemán (B1)"]
+                items: ["Español (Lengua materna)", "Alemán (B2)", "Inglés (A2)"]
             }
         }
     },
@@ -291,7 +303,7 @@ export const translations = {
             {
               title: 'Sitio Web Portafolio',
               description: 'Mi portafolio personal para mostrar mis proyectos, habilidades y experiencia profesional (este mismo sitio).',
-              tech: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Genkit'],
+              tech: ['Next.js', 'Tailwind CSS', 'TypeScript'],
               github: 'https://github.com/BALTASARGD/BaltaDev',
               demo: 'https://portfolio-seven-delta-66.vercel.app/',
               imageId: 'project-portfolio'
@@ -375,6 +387,199 @@ export const translations = {
         copyright: '© 2024 Baltasar Garcia. Todos los derechos reservados.',
     }
   },
+  de: {
+    nav: [
+      { href: '#home', label: 'Startseite' },
+      { href: '#about', label: 'Über mich' },
+      { href: '#projects', label: 'Projekte' },
+      { href: '#contact', label: 'Kontakt' },
+    ],
+    hero: {
+      greeting: '',
+      title: 'Full-Stack Webentwickler mit Sitz in Deutschland.',
+      description: 'Ich erstelle leidenschaftlich gerne dynamische, responsive und benutzerfreundliche Websites. Meine Reise in die Webentwicklung begann mit der Neugier, wie Websites funktionieren, und hat sich zu einer Leidenschaft für das Programmieren und Designen entwickelt.',
+      contactMe: 'Kontaktieren Sie mich',
+      myProjects: 'Meine Projekte',
+    },
+    about: {
+      title: 'Über mich',
+      subtitle: 'Meine Geschichte & Fähigkeiten',
+      experience: [
+        {
+          period: "Nov 2025 - Heute",
+          role: "Praktikum als Full-Stack-Web- und Softwareentwickler",
+          company: "It-Solutions Ghostnet Systems. Lübeck Deutschland",
+          description: "Ich absolviere derzeit ein Praktikum als Full-Stack-Web- und Softwareentwickler bei It-Solutions Ghostnet Systems.",
+        },
+        {
+          period: "Jun 2024 - Okt 2025",
+          role: "Studium der Web- und Softwareentwicklung",
+          company: "Dci Digital Carrer institute in Berlin",
+          description: "Ich habe am Dci Digital Carrer institute in Berlin Web- und Softwareentwicklung studiert und im Oktober 2025 abgeschlossen.",
+        },
+        {
+          period: "2024",
+          role: "Deutschniveau B2",
+          company: "Berufsbezogen",
+          description: "Ich habe berufsbezogenes Deutsch auf dem Niveau B2 gelernt.",
+        },
+      ],
+    },
+    skills: {
+        title: "Fähigkeiten",
+        subtitle: "Meine technischen und persönlichen Fähigkeiten.",
+        categories: {
+            languages_db: {
+                title: "Sprachen & Datenbanken",
+                items: ["HTML", "CSS", "JavaScript", "TypeScript", "Bash"]
+            },
+            frameworks: {
+                title: "Frameworks & Bibliotheken",
+                items: ["React", "Next.js", "Bootstrap", "Sass", "Responsive design", "Node.js", "Express.js", "RestAPI", "Mongoose", "Vite", "Bun", "Tailwind CSS"]
+            },
+            tools: {
+                title: "Tools & Plattformen",
+                items: ["Git", "GitHub", "Linux", "Vscode", "Firebase", "Npm", "Postman", "Render", "Markdown", "Vercel"]
+            },
+            design: {
+                title: "Design",
+                items: ["UI/Ux Design", "Figma", "Canva"]
+            },
+            human_languages: {
+                title: "Menschliche Sprachen",
+                items: ["Spanisch (Muttersprache)", "Deutsch (B2)", "Englisch (A2)"]
+            }
+        }
+    },
+    projects: {
+        title: 'Ausgewählte Projekte',
+        subtitle: 'Eine Auswahl meiner Arbeiten, die meine Fähigkeit demonstrieren, funktionale und ansprechende Webanwendungen zu erstellen.',
+        projectList: [
+            {
+              title: 'The Modern House',
+              description: 'Ein Klon der Website "The Modern House", einer auf Designerhäuser spezialisierten Immobilienagentur.',
+              tech: ['HTML', 'CSS', 'JavaScript'],
+              github: 'https://github.com/BALTASARGD/The-Modern-House',
+              demo: 'https://baltasargd.github.io/The-Modern-House/',
+              imageId: 'project-modern-house'
+            },
+            {
+              title: 'MyControl',
+              description: 'Eine Anwendung zur Verwaltung der persönlichen und familiären Finanzen mit Kontrolle über Einnahmen, Ausgaben und Budgets.',
+              tech: ['Next.js', 'Tailwind CSS', 'Firebase', 'TypeScript'],
+              github: 'https://github.com/BALTASARGD/MyControl',
+              demo: 'https://my-control-eta.vercel.app/',
+              imageId: 'project-my-control'
+            },
+            {
+              title: 'Chore Champ App',
+              description: 'Eine spielerische Anwendung zur Verwaltung von Hausarbeiten mit Fortschrittsverfolgung, Erfolgsserien und Erfolgen.',
+              tech: ['Next.js', 'Tailwind CSS', 'Firebase', 'TypeScript'],
+              github: 'https://github.com/BALTASARGD/chore-champ-app',
+              demo: 'https://chore-champ-app.vercel.app/',
+              imageId: 'project-chore-champ'
+            },
+            {
+              title: 'E-Commerce-Plattform',
+              description: 'Ein kompletter Online-Shop mit Warenkorb, Produktverwaltung und integriertem Zahlungsgateway.',
+              tech: ['React', 'Node.js', 'MongoDB', 'Express'],
+              github: 'https://github.com/BALTASARGD/ecommerce-platform',
+              imageId: 'project-ecommerce'
+            },
+            {
+              title: 'Aufgaben-Manager-App',
+              description: 'Eine Anwendung zur Organisation täglicher Aufgaben mit Benutzerauthentifizierungssystem und Fortschrittsverfolgung.',
+              tech: ['Next.js', 'Tailwind CSS', 'PostgreSQL', 'Prisma'],
+              github: 'https://github.com/BALTASARGD/task-manager-app',
+              imageId: 'project-task-manager'
+            },
+            {
+              title: 'Portfolio-Website',
+              description: 'Mein persönliches Portfolio, um meine Projekte, Fähigkeiten und beruflichen Erfahrungen zu präsentieren (genau diese Seite).',
+              tech: ['Next.js', 'Tailwind CSS', 'TypeScript'],
+              github: 'https://github.com/BALTASARGD/BaltaDev',
+              demo: 'https://portfolio-seven-delta-66.vercel.app/',
+              imageId: 'project-portfolio'
+          },
+        ]
+    },
+    contact: {
+        title: "Kontakt",
+        subtitle: "Ich bin offen für neue Möglichkeiten. Zögern Sie nicht, mich zu kontaktieren.",
+        details: {
+            email: { label: "Email" },
+            phone: { label: "Telefon" },
+            location: { label: "Standort", value: "Köln, Deutschland" }
+        },
+        form: {
+            title: "Schicken Sie mir eine Nachricht",
+            name: "Name",
+            namePlaceholder: "Ihr Name",
+            email: "Email",
+            emailPlaceholder: "Ihre E-Mail",
+            message: "Nachricht",
+            messagePlaceholder: "Ihre Nachricht",
+            sending: "Wird gesendet...",
+            submit: "Nachricht senden",
+            validation: {
+                name: "Der Name muss mindestens 2 Zeichen lang sein.",
+                email: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+                message: "Die Nachricht muss mindestens 10 Zeichen lang sein."
+            }
+        },
+        toast: {
+            success: {
+                title: "Nachricht gesendet!",
+                description: "Vielen Dank für Ihre Kontaktaufnahme. Ich werde mich bald bei Ihnen melden."
+            },
+            error: {
+                title: "Oh oh! Etwas ist schief gelaufen.",
+                description: "Es gab ein Problem mit Ihrer Anfrage."
+            }
+        }
+    },
+    skillRecommender: {
+      title: "KI-Fähigkeiten-Empfehler",
+      subtitle: "Analysieren Sie Ihre Fähigkeiten und erhalten Sie personalisierte Empfehlungen, um Ihre Karriere voranzutreiben.",
+      openButton: "Empfehlungen erhalten",
+      dialog: {
+        title: "Tool zur Empfehlung von Fähigkeiten",
+        description: "Beschreiben Sie Ihre aktuellen Fähigkeiten und Karriereziele, um KI-gestützte Empfehlungen zu erhalten.",
+      },
+      form: {
+        currentSkills: "Ihre aktuellen Fähigkeiten",
+        currentSkillsPlaceholder: "z.B. React, Node.js, SQL, Projektmanagement...",
+        careerGoals: "Ihre Karriereziele",
+        careerGoalsPlaceholder: "z.B. Senior Full-Stack-Entwickler werden, sich auf Frontend spezialisieren...",
+        generating: "Wird generiert...",
+        submit: "Empfehlungen erhalten",
+        validation: {
+          currentSkills: "Die aktuellen Fähigkeiten müssen mindestens 20 Zeichen lang sein.",
+          careerGoals: "Die Karriereziele müssen mindestens 20 Zeichen lang sein.",
+        },
+      },
+      loading: {
+        title: "Ihr Profil wird analysiert...",
+      },
+      results: {
+        recommendedSkills: "Empfohlene Fähigkeiten",
+        learningPaths: "Personalisierte Lernpfade",
+      },
+      toast: {
+        success: {
+          title: "Empfehlungen bereit!",
+          description: "Ihre personalisierten Fähigkeitsempfehlungen wurden generiert.",
+        },
+        error: {
+          title: "Oh oh! Etwas ist schief gelaufen.",
+          description: "Empfehlungen konnten nicht generiert werden. Bitte versuchen Sie es erneut.",
+        },
+      },
+    },
+    footer: {
+        copyright: '© 2024 Baltasar Garcia. Alle Rechte vorbehalten.',
+    }
+  }
 };
 
 export type Language = keyof typeof translations;

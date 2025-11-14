@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
-import { ThemeProvider } from '@/components/portfolio/ThemeProvider';
+import { ThemeProvider } from "../components/theme-provider";
 
 export const metadata: Metadata = {
   title: 'Baltasar Garcia - Full Stack Web Developer',
@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
         >
