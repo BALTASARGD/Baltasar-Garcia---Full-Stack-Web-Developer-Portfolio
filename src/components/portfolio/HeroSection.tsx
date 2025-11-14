@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Github, Linkedin, ArrowDown } from 'lucide-react';
+import { Github, Linkedin, ArrowDown, FileDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from './AnimatedSection';
 import { translations, type Language } from '@/lib/translations';
@@ -51,13 +51,18 @@ export function HeroSection({ language }: { language: Language }) {
               <div className="flex justify-center lg:justify-start space-x-4 mt-4">
                   <Button variant="ghost" size="icon" asChild>
                     <Link href="https://github.com/BALTASARGD" target="_blank" aria-label="GitHub">
-                      <Github className="h-6 w-6 text-muted-foreground hover:text-primary" />
+                      <Github className="h-16 w-16 text-muted-foreground transition-all hover:text-primary hover:shadow-[0_0_15px_rgba(255,255,255,0.8)] rounded-full" />
                     </Link>
                   </Button>
                   <Button variant="ghost" size="icon" asChild>
                     <Link href="https://www.linkedin.com/in/balta-garcia-68a50434a/" target="_blank" aria-label="LinkedIn">
-                      <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary" />
+                      <Linkedin className="h-16 w-16 text-muted-foreground transition-all hover:text-primary hover:shadow-[0_0_15px_rgba(255,255,255,0.8)] rounded-full" />
                     </Link>
+                  </Button>
+                  <Button variant="ghost" size="icon" asChild>
+                    <a href="/Lebenslauf-BGD-2025.pdf" download aria-label="Download CV">
+                      <FileDown className="h-16 w-16 text-muted-foreground transition-all hover:text-primary hover:shadow-[0_0_15px_rgba(255,255,255,0.8)] rounded-full" />
+                    </a>
                   </Button>
               </div>
              </AnimatedSection>
